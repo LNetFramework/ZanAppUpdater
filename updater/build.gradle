@@ -17,60 +17,60 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:appcompat-v7:25.0.0'
 }
 
-apply plugin: 'maven'
-uploadArchives {
+//apply plugin: 'maven'
+//uploadArchives {
+//
+//    def username = ""
+//    def password = ""
+//
+//    if (new File('local.properties').exists()) {
+//        Properties properties = new Properties()
+//        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+//        username = properties.getProperty("maven.username")
+//        password = properties.getProperty("maven.password")
+//    }
+//
+//    repositories {
+//        mavenDeployer {
+//            snapshotRepository(url: 'http://maven.qima-inc.com/content/repositories/snapshots/') {
+//                authentication(userName: username, password: password)
+//            }
+//            repository(url: 'http://maven.qima-inc.com/content/repositories/releases/') {
+//                authentication(userName: username, password: password)
+//            }
+//            pom.packaging = 'aar'
+//            pom.version = "$APP_UPDATER_VERSION_NAME-SNAPSHOT"
+//            pom.groupId = 'com.youzan.mobile'
+//            pom.artifactId = "appupdater"
+//        }
+//    }
+//}
 
-    def username = ""
-    def password = ""
 
-    if (new File('local.properties').exists()) {
-        Properties properties = new Properties()
-        properties.load(project.rootProject.file('local.properties').newDataInputStream())
-        username = properties.getProperty("maven.username")
-        password = properties.getProperty("maven.password")
-    }
+//configurations {
+//    javadocDeps
+//}
+//task sourcesJar(type: Jar) {
+//    from android.sourceSets.main.java.srcDirs
+//    classifier = 'sources'
+//}
+//
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath += configurations.javadocDeps
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//    failOnError false
+//}
+//
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
 
-    repositories {
-        mavenDeployer {
-            snapshotRepository(url: 'http://maven.qima-inc.com/content/repositories/snapshots/') {
-                authentication(userName: username, password: password)
-            }
-            repository(url: 'http://maven.qima-inc.com/content/repositories/releases/') {
-                authentication(userName: username, password: password)
-            }
-            pom.packaging = 'aar'
-            pom.version = "$APP_UPDATER_VERSION_NAME-SNAPSHOT"
-            pom.groupId = 'com.youzan.mobile'
-            pom.artifactId = "appupdater"
-        }
-    }
-}
-
-
-configurations {
-    javadocDeps
-}
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += configurations.javadocDeps
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    failOnError false
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
+//artifacts {
+//    archives javadocJar
+//    archives sourcesJar
+//}
